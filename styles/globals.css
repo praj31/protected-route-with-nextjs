@@ -7,10 +7,41 @@ body {
 }
 
 a {
-	color: inherit;
+	color: #336699;
 	text-decoration: none;
+	margin-right: 1rem;
 }
 
 * {
 	box-sizing: border-box;
+}
+
+nav {
+	display: flex;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #dddddd;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+input {
+	padding: 0.2rem 0.4rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+.wrapper {
+	width: 100%;
+	padding: 2rem;
+}
+
+.container {
+	margin: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
