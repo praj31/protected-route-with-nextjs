@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { authenticateUser } from '../auth'
-import '../styles/globals.css'
 import { getUsernameFromCookie } from '../util'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
 

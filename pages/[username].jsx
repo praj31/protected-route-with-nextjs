@@ -1,7 +1,7 @@
 import Router from 'next/router'
 import { useEffect, useState } from 'react'
-import { isAuthenticated } from '../auth'
 import { Navbar } from '../components/Navbar'
+import { isAuthenticated } from '../auth'
 
 export default function ProtectedRoute() {
 	const authenticated = isAuthenticated()

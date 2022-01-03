@@ -8,6 +8,7 @@ export default function Logout(){
         logoutUser()
         unauthenticateUser()
         Router.push('/')
-    })
+    }, [])
+    
     return <p>Logging user out...</p>
 }
