@@ -1,10 +1,16 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { isAuthenticated } from '../auth'
+import { getUsernameFromCookie } from '../util'
 
 export const Navbar = () => {
 	const authenticated = isAuthenticated()
 	const [username, setUsername] = useState('')
+
+    useEffect(() => {
+        const usernameFromCookie = getUsernameFromCookie()
+        setUsername(usernameFromCookie) 
+    },[])
 
 	return (
 		<nav>
@@ -13,7 +19,7 @@ export const Navbar = () => {
 				<Link
 					href={{
 						pathname: '/[username]',
-						query: { username },
+						query: { username: username },
 					}}
 				>
 					Protected

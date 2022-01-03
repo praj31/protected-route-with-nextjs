@@ -1,9 +1,15 @@
+import Router from "next/router"
+import { authenticateUser } from "../auth"
 import { Navbar } from "../components/Navbar"
+import { setUsernameCookie } from "../util"
 
 export default function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault()
         const username = e.currentTarget.elements.username.value
+        setUsernameCookie(username)
+        authenticateUser()
+        Router.push('/')
 	}
 
 	return (
