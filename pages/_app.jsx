@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }) {
   const [loading,setLoading] = useState(true)
 
   useEffect(() => {
+    // look if username cookie exists
     const user = getUsernameFromCookie()
+    // authenticate the user if does
     if(user){
       authenticateUser()
     }

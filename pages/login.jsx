@@ -7,8 +7,11 @@ export default function Login() {
 	const handleSubmit = (e) => {
 		e.preventDefault()
         const username = e.currentTarget.elements.username.value
+		// set username cookie with the value
         setUsernameCookie(username)
+		// set auth status to true
         authenticateUser()
+		// redirect user to homepage
         Router.push('/')
 	}
 

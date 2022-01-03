@@ -2,6 +2,7 @@ import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import { isAuthenticated } from '../auth'
+import { getUsernameFromCookie } from '../util'
 
 export default function ProtectedRoute() {
 	const authenticated = isAuthenticated()
@@ -9,10 +10,13 @@ export default function ProtectedRoute() {
 	const [username, setUsername] = useState('')
 
 	useEffect(() => {
+		// if the user is not authenticated, redirect them to login page
 		if (!authenticated) {
 			Router.push('/login')
 		}
-        setUsername(Router.query.username)
+		// get username from stored cookie
+		const usernameFromCookie = getUsernameFromCookie()
+		setUsername(usernameFromCookie)
 		setLoading(false)
 	})
 

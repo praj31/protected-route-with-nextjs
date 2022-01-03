@@ -8,6 +8,7 @@ export const Navbar = () => {
 	const [username, setUsername] = useState('')
 
     useEffect(() => {
+		// fetches username from the stored cookie
         const usernameFromCookie = getUsernameFromCookie()
         setUsername(usernameFromCookie) 
     },[])

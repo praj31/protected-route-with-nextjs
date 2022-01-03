@@ -5,8 +5,11 @@ import { logoutUser } from "../util"
 
 export default function Logout(){
     useEffect(()=>{
+        // remove the cookie
         logoutUser()
+        // set auth status to false
         unauthenticateUser()
+        // redirect user to homepage
         Router.push('/')
     }, [])
     
